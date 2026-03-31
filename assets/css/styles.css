@@ -1,0 +1,326 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body {
+    --background: #141414;
+    --text-color: #fff;
+    --card-background: #1f1f1f;
+    --card-border: rgba(255, 255, 255, 0.2);
+    background: var(--background);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+}
+
+.logo img{
+    width: 8rem;
+    height: 8rem;
+    margin-left: 1rem;
+    margin-top: auto;
+}
+
+
+body.light-mode {
+    --background: #f7f7f7;
+    --text-color: #111;
+    --card-background: #ffffff;
+    --card-border: rgba(0, 0, 0, 0.15);
+    background: var(--background);
+    color: var(--text-color);
+}
+
+/* CENTRALIZA TUDO */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* TÍTULO */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* CONTAINER */
+section {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* LISTA (CONTAINER PRINCIPAL) */
+nav.profiles ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+/* ITEM (AGORA É O CARD) */
+nav.profiles ul li {
+    flex: 0 1 180px; /* não cresce, só se adapta */
+    display: flex;
+    justify-content: center;
+}
+/* LINK DO PERFIL */
+.profile {
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+    background: transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav.profiles ul:hover img {
+    filter: blur(2px);
+    transform: scale(0.95);
+    opacity: 0.6;
+}
+
+nav.profiles ul li:hover img {
+    filter: none;
+    transform: scale(1.08);
+    opacity: 1;
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+}
+
+
+
+/* FIGURA */
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* IMAGEM */
+.profiles img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.profiles img:hover {
+    border: 1px solid #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.8);
+}
+
+/* TEXTO */
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* container */
+.theme-switch {
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    width: 60px;
+    height: 30px;
+}
+
+/* esconde checkbox */
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* trilho */
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #444;
+    border-radius: 30px;
+    height: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* 🔥 bolinha COM ícone centralizado */
+.slider::before {
+    content: var(--icon); /* 🔥 agora dinâmico */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 4px;
+    top: 4px;
+
+    background: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+
+    transition: transform 0.3s ease;
+}
+
+/* quando ativado (modo claro) */
+input:checked + .slider {
+    background: #ddd;
+}
+
+/* 🔥 move a bolinha */
+input:checked + .slider::before {
+    transform: translateX(28px);
+}
+
+/* move a bolinha */
+input:checked + .slider::before {
+    transform: translateX(28px);
+}
+
+/* ícone */
+#icon {
+    position: absolute;
+    top: 50%;
+    left: 15px; /* posição inicial */
+    transform: translate(-50%, -50%); /* 🔥 centraliza perfeitamente */
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+/* quando ativado */
+input:checked + .slider #icon {
+    left: 45px; /* acompanha a bolinha */
+}
+
+/* ---------- GERENCIAR ---------- */
+
+.gerenciar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.botao-gerenciar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid grey;
+    color: grey;
+    padding: 10px 30px;
+    font-size: 1vw;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 200;
+    transition: all 0.3s;
+}
+
+.botao-gerenciar:hover {
+    border-color: #e5e5e5;
+    color: #e5e5e5;
+}
+
+/* =========================
+    TABLET
+========================= */
+@media (max-width: 1024px) {
+    nav.profiles ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem; /* controla o espaço */
+    }
+
+    .botao-gerenciar{
+        font-size: 3.5vw;   /* aumenta proporcionalmente */
+        padding: 14px 40px; /* deixa maior e mais “clicável” */
+    }
+
+    nav.profiles ul li {
+        flex: 1 1 30%; /* 🔥 3 colunas mais equilibradas */
+        max-width: 200px; /* evita ficar gigante */
+    }
+
+    img {
+        width: 9rem;
+        height: 9rem;
+    }
+}
+
+/* =========================
+    MOBILE
+========================= */
+@media (max-width: 768px) {
+    nav.profiles ul {
+        display: grid;
+        grid-template-columns: repeat(2, max-content); 
+        justify-content: center; /* 🔥 cola as colunas no meio */
+        gap: 4rem;
+    }
+
+    nav.profiles ul li {
+        width: 100%;
+    }
+}
+
+/* =========================
+    MOBILE PEQUENO
+========================= */
+@media (max-width: 480px) {
+
+    .botao-gerenciar{
+        font-size: 3.5vw;   /* aumenta proporcionalmente */
+        padding: 14px 40px; /* deixa maior e mais “clicável” */
+    }
+
+    main {
+        min-height: 100vh; /* garante que ocupe toda a altura da tela */
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    /* GRID 2x2 */
+    nav.profiles ul {
+        display: grid;
+        grid-template-columns: repeat(2, max-content); 
+        gap: 2.5rem;
+    }
+
+    nav.profiles ul li {
+        width: 100%;
+    }
+
+    img {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+}

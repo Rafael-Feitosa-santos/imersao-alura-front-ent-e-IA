@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/image.png" type="image/x-icon">
+    <title>Netflix Brasil - assistir a séries online, assistir a filmes online</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li>
+                    <a href="index.html" class="logo" aria-label="Netflix Brasil">
+                        <img src="./assets/images/netflix-logo.svg" alt="Logo da Netflix">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+
+        <h1>Quem está assistindo?</h1>
+
+        <section aria-label="Perfis disponíveis">
+            <nav class="profiles" aria-label="Navegação de perfis">
+                <ul>
+                    <li>
+                        <a href="./assets/pages/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/images/perfil-1.png" alt="Perfil Davi">
+                                <figcaption class="nome-perfil">Davi</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./assets/pages/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/images/perfil-2.png" alt="Perfil Rafael">
+                                <figcaption class="nome-perfil">Rafael</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./assets/pages/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/images/perfil-3.png" alt="Perfil Magno">
+                                <figcaption class="nome-perfil">Magno</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./assets/pages/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/images/perfil-4.png" alt="Perfil Matilde">
+                                <figcaption class="nome-perfil">Matilde</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="gerenciar">
+                <button type="button" class="botao-gerenciar">
+                    Gerenciar Perfis
+                </button>
+            </section>
+        </section>
+    </main>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
